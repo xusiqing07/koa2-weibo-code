@@ -16,7 +16,7 @@ const errorViewRouter = require('./routes/view/error')
 const index = require('./routes/index')
 const { REDIS_CONF } = require('./conf/db')
 const { isProd } = require('./utils/env')
-
+const { SESSION_SECRET_KEY } = require('./conf/secretKeys')
 // error handler
 let onerrorConf = {}
 if(isProd) {
@@ -39,7 +39,7 @@ app.use(views(__dirname + '/views', {
     extension: 'ejs'
 }))
 // session配置
-app.keys = ['UIsdf_7878#$']
+app.keys = [SESSION_SECRET_KEY]
 app.use(session({
     key: 'weibo:sid', // cookie name
     prefix: 'weibo:sess',
