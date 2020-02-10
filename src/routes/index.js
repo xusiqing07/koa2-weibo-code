@@ -7,19 +7,19 @@ router.get('/', async (ctx, next) => {
         isMe: false,
         blogList: [
             {
-                id:1,
+                id: 1,
                 title: 'aaa'
             },
             {
-                id:2,
+                id: 2,
                 title: 'bbb'
             },
             {
-                id:3,
+                id: 3,
                 title: 'ccc'
             },
             {
-                id:4,
+                id: 4,
                 title: 'ddd'
             },
         ]
@@ -51,7 +51,7 @@ router.get('/profile/:userName/:name', async (ctx, next) => {
 })
 
 router.get('/loadMore/:userName/:pageIndex', async (ctx, next) => {
-    const { userName,pageIndex } = ctx.params
+    const { userName, pageIndex } = ctx.params
     ctx.body = {
         title: 'this is loadMore',
         userName,

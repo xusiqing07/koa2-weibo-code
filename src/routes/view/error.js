@@ -4,13 +4,13 @@
 
 const router = require('koa-router')()
 
-//error
-router.get('/error',async (ctx, next)=>{
+// error
+router.get('/error', async (ctx, next) => {
     await ctx.render('error')
 })
 
-//404
-router.get('*',async (ctx, next)=>{
+// 404
+router.get('*', async (ctx, next) => {
     await ctx.render('404')
 })
 

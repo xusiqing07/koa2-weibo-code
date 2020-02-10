@@ -3,9 +3,9 @@
  */
 
 const seq = require('../seq')
-const { STRING, DECIMAL }= require('../types')
+const { STRING, DECIMAL } = require('../types')
 
-const User = seq.define('user',{
+const User = seq.define('user', {
     userName: {
         type: STRING,
         allowNull: false,
@@ -17,12 +17,12 @@ const User = seq.define('user',{
         allowNull: false,
         comment: '密码'
     },
-    nickName:{
+    nickName: {
         type: STRING,
         allowNull: false,
         comment: '昵称'
     },
-    gender:{
+    gender: {
         type: DECIMAL,
         allowNull: false,
         defaultValue: 3,
