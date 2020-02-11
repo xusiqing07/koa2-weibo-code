@@ -12,10 +12,12 @@ const path = require('path')
 // routes
 const userAPIRouter = require('./routes/api/user')
 const utilsAPIRouter = require('./routes/api/utils')
+const blogHomeAPIRouter = require('./routes/api/blog-home')
 
 const errorViewRouter = require('./routes/view/error')
 const userViewRouter = require('./routes/view/user')
 const blogViewRouter = require('./routes/view/blog')
+
 const { REDIS_CONF } = require('./conf/db')
 const { isProd } = require('./utils/env')
 const { SESSION_SECRET_KEY } = require('./conf/secretKeys')
@@ -67,6 +69,7 @@ app.use(session({
 // routes
 app.use(userViewRouter.routes(), userViewRouter.allowedMethods())
 app.use(blogViewRouter.routes(), blogViewRouter.allowedMethods())
+app.use(blogHomeAPIRouter.routes(), blogHomeAPIRouter.allowedMethods())
 
 app.use(userAPIRouter.routes(), userAPIRouter.allowedMethods())
 app.use(utilsAPIRouter.routes(), utilsAPIRouter.allowedMethods())
