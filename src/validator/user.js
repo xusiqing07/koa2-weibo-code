@@ -53,6 +53,4 @@ function userValidate(data = {}) {
     return validate(SCHEMA, data)
 }
 
-module.exports = {
-    userValidate
-}
+module.exports = userValidate
